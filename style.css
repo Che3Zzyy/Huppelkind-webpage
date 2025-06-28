@@ -29,8 +29,8 @@ header {
 }
 
 .logo {
-  width: 200%;
-  max-width: 600px; /* limits size on large screens */
+  width: 100%;
+  max-width: 800px; /* limits size on large screens */
   height: auto;
   margin: 0 auto;
   display: block;
