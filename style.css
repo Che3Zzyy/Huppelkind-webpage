@@ -12,12 +12,13 @@
 }
 
 body {
-  font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-font-weight: normal;
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
+  font-weight: normal;
+  font-size: 1rem;
 }
 
 header {
@@ -28,8 +29,11 @@ header {
 }
 
 .logo {
-  max-width: 90%;
+  width: 100%;
+  max-width: 300px; /* limits size on large screens */
   height: auto;
+  margin: 0 auto;
+  display: block;
 }
 
 nav ul {
@@ -50,24 +54,25 @@ nav a {
   transition: background-color 0.3s ease;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
   background-color: var(--accent-color);
   color: white;
+  outline: none;
 }
 
 main {
   padding: 20px;
 }
 
-section {
-  margin-bottom: 40px;
-  text-align: center;
+/* Fade-in animation */
+.fade-in {
   opacity: 0;
   transform: translateY(30px);
   transition: all 1s ease-out;
 }
 
-section.visible {
+.fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -103,6 +108,15 @@ footer {
 
 /* Mobile Responsive */
 @media (max-width: 600px) {
+  body {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .logo {
+    max-width: 180px;
+  }
+
   nav ul {
     flex-direction: column;
   }
@@ -110,5 +124,11 @@ footer {
   .gallery {
     flex-direction: column;
     align-items: center;
+  }
+
+  /* Left align text on mobile for readability */
+  .fade-in {
+    text-align: left;
+    padding: 0 10px;
   }
 }
