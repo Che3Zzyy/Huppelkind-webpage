@@ -30,7 +30,7 @@ header {
 
 .logo {
   width: 100%;
-  max-width: 300px; /* limits size on large screens */
+  max-width: 600px; /* limits size on large screens */
   height: auto;
   margin: 0 auto;
   display: block;
